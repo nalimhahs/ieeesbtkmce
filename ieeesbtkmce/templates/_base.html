@@ -1,0 +1,324 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <style id="stndz-style">
+      div[class*="item-container-obpd"],
+      a[data-redirect*="paid.outbrain.com"],
+      a[onmousedown*="paid.outbrain.com"] {
+        display: none !important;
+      }
+      a div[class*="item-container-ad"] {
+        height: 0px !important;
+        overflow: hidden !important;
+        position: absolute !important;
+      }
+      div[data-item-syndicated="true"] {
+        display: none !important;
+      }
+      .grv_is_sponsored {
+        display: none !important;
+      }
+      .zergnet-widget-related {
+        display: none !important;
+      }
+    </style>
+    <meta charset="utf-8" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.google-analytics.com/analytics.js"
+    ></script>
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=UA-138758491-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-138758491-1");
+    </script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Official website of IEEE Student Branch, TKM College of Engineering."
+    />
+    <meta
+      name="keywords"
+      content="IEEE,IEEE SB TKMCE,IEEEorg,IEEER10,TKMCE,TKM College of engineering,IEEE Kerala,"
+    />
+    <link
+      rel="icon"
+      href={% static "img/ieee_mb_blue.png" %}
+      type="image/png"
+    />
+    <title>{% block title %}Home - IEEE SB TKMCE{% endblock %}</title>
+
+    <link
+      rel="stylesheet"
+      href={% static "css/bootstrap.css" %}
+    />
+    <link
+      rel="stylesheet"
+      href={% static "vendors/linericon/style.css" %}
+    />
+    <link
+      rel="stylesheet"
+      href={% static "css/font-awesome.min.css" %}
+    />
+    <link
+      rel="stylesheet"
+      href={% static "vendors/owl-carousel/owl.carousel.min.css" %}
+    />
+    <link
+      rel="stylesheet"
+      href={% static "css/magnific-popup.css" %}
+    />
+    <link
+      rel="stylesheet"
+      href={% static "vendors/nice-select/css/nice-select.css" %}
+    />
+    <link
+      rel="stylesheet"
+      href={% static "css/style.css" %}
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+      .head-font,
+      th,
+      tr {
+        font-family: "Montserrat", sans-serif;
+      }
+      .carousel-item {
+        /* height: 100vh; */
+        min-height: 350px;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        width: 100%;
+        height: 500px;
+      }
+      .team-font {
+        font-family: "Lato";
+      }
+      @media only screen and (max-width: 1000px) {
+        .navbar-custom {
+          background: #00629b;
+        }
+        .menu-text {
+          color: #ffffff;
+        }
+        .nav-link {
+          color: #ffffff;
+        }
+      }
+      @media only screen and (min-width: 1000px) {
+        .menu-text {
+          color: #00629b;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header_area">
+      <div class="main_menu">
+        <nav
+          class="navbar navbar-expand-lg navbar-light"
+          style="background: #ffffff;"
+        >
+          <div class="container">
+            <a class="navbar-brand logo_h" href="//www.ieeesbtkmce.in/home"
+              ><img
+                src={% static "img/ieee.gif" %}
+                alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              style="background:#016699;"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse offset navbar-custom"
+              id="navbarSupportedContent"
+            >
+              <ul class="nav navbar-nav menu_nav justify-content-end">
+                <li class="nav-item">
+                  <a
+                    class="nav-link menu-text"
+                    style="text-align: center;"
+                    href={% url "home" %}
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link menu-text"
+                    style="text-align: center;"
+                    href={% url "about" %}
+                    >About</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link menu-text"
+                    style="text-align: center;"
+                    href={% url "story-listing" %}
+                    >Stories</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link menu-text"
+                    style="text-align: center;"
+                    href={% url "update-listing" %}
+                    >Updates</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link menu-text"
+                    style="text-align: center;"
+                    href={% url "team" %}
+                    >Team</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link menu-text"
+                    style="text-align: center;"
+                    href={% url "contact" %}
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    {% block content %}
+    
+    {% endblock %}
+    <!--================Footer Area =================-->
+    <footer class="footer_area" style="padding: 20px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer_top flex-column">
+              <h3 class="head-font">Quick Links</h3>
+              <ul>
+                <a href="https://www.ieee.org/">IEEE</a>
+                <br /><a href="https://ieeexplore.ieee.org/"
+                  >IEEE Xplore Digital Library</a
+                >
+                <br /><a href="https://ieee-collabratec.ieee.org/"
+                  >IEEE Collabratec</a
+                >
+                <br /><a href="http://spectrum.ieee.org/"
+                  >IEEE Spectrum Online</a
+                >
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="footer_top flex-column">
+              <h3 class="head-font">Follow Us</h3>
+              <div class="footer_social" style="text-align: left;">
+                <a href="https://www.facebook.com/ieeesbtkmce"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+                <a href="https://www.twitter.com/IEEEorg"
+                  ><i class="fa fa-twitter"></i
+                ></a>
+                <a href="https://www.instagram.com/ieeesbtkmce/"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="footer_top flex-column">
+              <h3 class="head-font">Address</h3>
+              <p>
+                TKM College of Engineering<br />
+                Karicode, Kollam, Kerala<br />
+                PIN : 691005<br />
+              </p>
+              <h5 class="head-font">Chairperson</h5>
+              Pranav Pramod : <a href="tel:+919995947269">+91 9995947269</a>
+              <h5 class="head-font mt-3" style="letter-spacing: 0.1em;">
+                Counselor
+              </h5>
+              Mrs. Reshna S : <a href="tel:+919496410839">+91 9496410839</a>
+              <h5 class="head-font mt-3">Webmaster</h5>
+              <a href="//thameeem.com/" style="color: #777777;" target="_blank"
+                >Thameem K :&nbsp;</a
+              ><a href="tel:+918281582725"> +91 8281582725</a>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="row footer_bottom justify-content-center">
+          <p class="col-lg-8 col-sm-12 footer-text">
+            <b style="color: black;">
+              IEEE SB TKMCE
+            </b>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!--================End Footer Area =================-->
+    <script>
+      var slideIndex = 0;
+      carousel();
+
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("myslides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) {
+          slideIndex = 1;
+        }
+        x[slideIndex - 1].style.display = "block";
+        setTimeout(carousel, 3000); // Change image every 2 seconds
+      }
+    </script>
+    <script src={% static "js/jquery-3.2.1.min.js" %}></script>
+    <script src={% static "js/bootstrap.min.js" %}></script>
+    <script src={% static "js/stellar.js" %}></script>
+    <script src={% static "vendors/lightbox/simpleLightbox.min.js" %}></script>
+    <script src={% static "vendors/nice-select/js/jquery.nice-select.min.js" %}></script>
+    <script src={% static "vendors/isotope/imagesloaded.pkgd.min.js" %}></script>
+    <script src={% static "vendors/isotope/isotope-min.js" %}></script>
+    <script src={% static "vendors/owl-carousel/owl.carousel.min.js" %}></script>
+    <script src={% static "js/jquery.ajaxchimp.min.js" %}></script>
+    <script src={% static "js/theme.js" %}></script>
+  </body>
+</html>
