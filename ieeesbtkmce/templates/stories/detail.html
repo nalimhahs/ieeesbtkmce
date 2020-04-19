@@ -1,0 +1,100 @@
+{% extends "_base.html" %} {% block content %}
+<section class="blog_area single-post-area section_gap">
+  <div class="container">
+    <h2 class="text-center mb-5 mt-5 head-font">{{story.title}}</h2>
+
+    <div class="row">
+      <div class="col-lg-8 posts-list">
+        <div class="single-post row">
+          <div class="col-lg-12">
+            <div class="feature-img">
+              <div
+                id="carouselExampleIndicators"
+                class="carousel slide mb-5"
+                data-ride="carousel"
+              >
+                <ol class="carousel-indicators">
+                  {% for image in images %}
+                  <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="{{ forloop.counter0 }}"
+                    class="{% if forloop.counter == 1 %}active{% endif %}"
+                  ></li>
+                  {% endfor %}
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                  {% for image in carousel %}
+                  <div
+                    class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
+                  >
+                    <img src="{{image.image.url}}" class="d-block w-100" />
+                  </div>
+                  {% endfor %}
+                </div>
+                <a
+                  class="carousel-control-prev"
+                  href="#carouselExampleIndicators"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a
+                  class="carousel-control-next"
+                  href="#carouselExampleIndicators"
+                  role="button"
+                  data-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3">
+            <div class="blog_info text-right">
+              <ul class="blog_meta list">
+                <li>
+                  <i class="lnr lnr-calendar-full mr-2"></i
+                  ><b style="opacity: 0.7;"
+                    >{{story.published_date|date:"l, d M Y"}}</b
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-9 blog_details quotes">
+            <p class="excert text-justify head-font">
+              {{story.content|safe}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="blog_right_sidebar">
+          <aside class="single_sidebar_widget popular_post_widget">
+            <h3 class="widget_title">Latest Stories</h3>
+            {% for story in recent %}
+            <div class="media post_item">
+              <div class="media-body">
+                <a href={% url "story-detail" story.slug %}
+                  ><h3 class="head-font">{{story.title}}</h3></a
+                >
+                <p>{{story.published_date|date:"l, d M Y"}}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

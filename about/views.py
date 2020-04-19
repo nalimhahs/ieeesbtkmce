@@ -4,4 +4,4 @@ from .models import Section
 
 def aboutPage(request):
     sections = Section.objects.all()
-    return render(request, "", {"sections": sections})
+    return render(request, "about/about.html", {"sections": sections})
