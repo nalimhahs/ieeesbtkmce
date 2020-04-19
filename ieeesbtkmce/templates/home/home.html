@@ -7,34 +7,24 @@
     data-ride="carousel"
   >
     <ol class="carousel-indicators">
+      {% for image in carousel %}
       <li
         data-target="#carouselExampleIndicators"
-        data-slide-to="0"
-        class=""
+        data-slide-to="{{ forloop.counter0 }}"
+        class="{% if forloop.counter == 1 %}active{% endif %}"
       ></li>
-      <li
-        data-target="#carouselExampleIndicators"
-        data-slide-to="1"
-        class=""
-      ></li>
-      <li
-        data-target="#carouselExampleIndicators"
-        data-slide-to="2"
-        class="active"
-      ></li>
+      {% endfor %}
     </ol>
     <div class="carousel-inner" role="listbox">
       {% for image in carousel %}
       <div
-        class="carousel-item"
-        style="background-image: url("{{image.image}}");"
+        class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
       >
+        <img src="{{image.image}}" class="d-block w-100">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4 head-font">{{image.title}}</h2>
           <p class="lead">
-            <a href={{image.link}}
-              >Readmore</a
-            >
+            <a href={{image.link}}>Read More</a>
           </p>
         </div>
       </div>
@@ -171,11 +161,6 @@
           <div class="owl-nav disabled">
             <div class="owl-prev">prev</div>
             <div class="owl-next">next</div>
-          </div>
-          <div class="owl-dots">
-            <div class="owl-dot"><span></span></div>
-            <div class="owl-dot active"><span></span></div>
-            <div class="owl-dot"><span></span></div>
           </div>
         </div>
       </div>
