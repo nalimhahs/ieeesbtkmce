@@ -123,45 +123,35 @@
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
           <div>
-            <h2 class="head-font">AWARDS AND ACHIEVEMENTS</h2>
+            <h2 class="head-font mb-5 pb-5">AWARDS AND ACHIEVEMENTS</h2>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="testi_slider owl-carousel owl-loaded owl-drag">
-          <div class="owl-stage-outer">
-            <div class="owl-stage">
-            {% for award in awards %}
-              <div class="owl-item">
-                <div class="testi_item">
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <img
-                        style="align-items: center;"
-                        height="130px"
-                        width="130px"
-                        src={{award.image}}
-                      />
-                    </div>
+        <div class="testi_slider owl-carousel">
+          {% for award in awards %}
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4">
+                  <img
+                    style="align-items: center;"
+                    height="130px"
+                    width="130px"
+                    src={{award.image}}
+                  />
+                </div>
 
-                    <div class="col-lg-8">
-                      <div class="testi_text">
-                        <h4 class="head-font">{{award.title}</h4>
-                        <p class="text-justify">
-                          {{award.content}}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4 class="head-font">{{award.title}}</h4>
+                    <p class="text-justify">
+                      {{award.content}}
+                    </p>
+                </div>
                 </div>
               </div>
-            {% endfor %}
             </div>
-          </div>
-          <div class="owl-nav disabled">
-            <div class="owl-prev">prev</div>
-            <div class="owl-next">next</div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
