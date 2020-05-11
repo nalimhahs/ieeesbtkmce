@@ -12,4 +12,8 @@ def updateDetail(request, slug):
     images = UpdateImage.objects.filter(update=update)
     contacts = Contact.objects.filter(update=update)
     recent = Update.objects.all().order_by("published_date")[:5]
-    return render(request, "", {"update": update, "images": images, "contacts": contacts, "recent": recent})
+    return render(
+        request,
+        "",
+        {"update": update, "images": images, "contacts": contacts, "recent": recent},
+    )

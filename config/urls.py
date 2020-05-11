@@ -26,7 +26,6 @@ urlpatterns = [
     # User management
     path("users/", include("ieeesbtkmce.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
     path("_nested_admin/", include("nested_admin.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

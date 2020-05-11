@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+
 class Update(models.Model):
 
     title = models.CharField(max_length=127)
@@ -18,6 +19,7 @@ class Update(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class UpdateImage(models.Model):
 

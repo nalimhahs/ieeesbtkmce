@@ -1,5 +1,6 @@
 {
     "python.pythonPath": "/home/milan/.local/share/virtualenvs/ieeesbtkmce-Nig6OWMz/bin/python",
     "python.linting.pylintEnabled": true,
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "restructuredtext.confPath": ""
 }
